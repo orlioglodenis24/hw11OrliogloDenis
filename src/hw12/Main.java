@@ -3,16 +3,24 @@ package hw12;
 class Main {
 
     public static void main(String[] args) {
-        Car car = new Car("m1", 100);
+        Car car = new Car();
         car.go();
+        car.printInfo();
         car.calculateDistance(1000);
-        Truck truck = new Truck("ms10", 120, 2000);
-        truck.go();
-        truck.calculateDistance(100,3);
 
-        Plane airplane = new Plane("airplane-9000 ", 200, 2000);
+        System.out.println();
+
+        Truck truck = new Truck();
+        truck.go();
+        truck.printInfo();
+        truck.calculateDistance(300);
+
+        System.out.println();
+
+        Plane airplane = new Plane();
         airplane.go();
-        airplane.calculateDistance(10000,3);
+        airplane.printInfo();
+        airplane.calculateDistance(10000, 3);
     }
 
 }
