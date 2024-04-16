@@ -9,7 +9,7 @@ public class Book implements Printable {
 public static void  printBooks(Printable[] printable){
     for(Printable x:printable){
         if(x instanceof Magazine){
-            System.out.println("Название Журнала: "+printable);
+            System.out.println("Название Журнала: "+x);
         }
     }
 }
