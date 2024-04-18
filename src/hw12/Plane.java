@@ -1,6 +1,6 @@
 package hw12;
 
-public class Plane extends Transport{
+public class Plane extends Transport {
 
     private int flightAltitude;
 
@@ -18,4 +18,4 @@ public class Plane extends Transport{
     public void printInfo() {
         System.out.println("This is a Plane");
     }
-
+}

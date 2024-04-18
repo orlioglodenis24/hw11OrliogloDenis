@@ -21,4 +21,4 @@ public abstract class Transport {
         int dist = speed * time;
         System.out.println("скорость: " + speed + ", Distance: " + dist);
     }
-
+}
