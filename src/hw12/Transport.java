@@ -16,6 +16,9 @@ public abstract class Transport {
         System.out.println("модель: " + model);
         System.out.println("speed: " + speed);
     }
-}
 
+    void calculateDistance(int speed, int time) {
+        int dist = speed * time;
+        System.out.println("скорость: " + speed + ", Distance: " + dist);
+    }
 

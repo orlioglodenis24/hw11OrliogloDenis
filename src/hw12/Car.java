@@ -6,6 +6,11 @@ public class Car extends Transport{
     }
 
     public void go() {
+        System.out.println("The car is moving.");
+    }
+
+    public void printInfo() {
+        System.out.println("This is a Car");
         System.out.println("Модель авто: " + model + " и его скорость: " + speed + "км/час");
     }
 }
