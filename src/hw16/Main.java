@@ -1,4 +1,8 @@
 package hw16;
+//Создать класс Car. Создать в нем поля: mark, age, color, owner. Для поля owner создать класс Owner,
+// который будет содержать поля: name, age, expirienceAge (опыт вождения). В главном классе создать 5 объектов класса Car
+// Создать ArrayList и использовать методы:
+// add(), addAll(), set(), indexOf(), size(), contains(), get(), remove(), lastIndexOf(), isEmpty(), clear() для этих объектов
 
 import java.util.ArrayList;
 
