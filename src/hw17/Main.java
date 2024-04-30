@@ -13,7 +13,7 @@ import java.util.Set;
 public class Main {
 
     public static <T> Set<T> removeDuplicates(Collection<T> collection) {
-        return new LinkedHashSet<>(collection);
+        return new HashSet<>(collection);
     }
 
     public static void main(String[] args) {
@@ -31,7 +31,7 @@ public class Main {
         fruitsSet.add("картофель");
         fruitsSet.add("арбуз");
 
-        System.out.print("Элементы в коллекции 'HashSet' : ");
+        System.out.print("Элементы в коллекции : ");
         for (String str : fruitsSet) {
             System.out.print(str + ", ");
         }
