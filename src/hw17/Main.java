@@ -12,7 +12,7 @@ import java.util.Set;
 
 public class Main {
 
-    public static <T> Set<T> removeDuplicates(Collection<T> collection) {
+    public static Collection removeDuplicates(Collection collection) {
         return new HashSet<>(collection);
     }
 
@@ -39,7 +39,8 @@ public class Main {
         System.out.println();
 
         System.out.print("Элементы в коллекции без повторений: ");
-        Set<String> fruits = removeDuplicates(fruitsSet);
+        Set<String> fruits = (Set<String>) removeDuplicates(fruitsSet);
+
         for (String str : fruits) {
             System.out.print(str + ", ");
         }
