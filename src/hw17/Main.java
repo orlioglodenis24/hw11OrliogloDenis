@@ -1,9 +1,6 @@
 package hw17;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 //Создайте коллекцию Set с типом элементов String.
 // Добавьте в неё  11 строк: арбуз, банан, вишня, груша, дыня, ежевика, женьшень, земляника, ирис, картофель, арбуз.
 // После этого выведем содержимое коллекции на экран, параллельно наблюдая за порядком добавленных.
@@ -44,8 +41,16 @@ public class Main {
         for (String str : fruits) {
             System.out.print(str + ", ");
         }
+        System.out.println();
+        System.out.println();
+        HashMap<Integer,String> pass= new HashMap<>();
+
+
+        pass.put(pass.hashCode(),"Deonis3");
+        pass.put(pass.hashCode(),"Sergei");
+        pass.put(pass.hashCode(),"Denis");
+        System.out.println(pass);
+
     }
-
-
 }
 
