@@ -32,6 +32,6 @@ public class main {
         System.out.println("dropWhile(17 elem): " + res2);
 
         System.out.print("peek: ");
-        List<Integer> res3 = list.stream().peek(a -> System.out.print(a + " ")).toList();
+        List<Integer> res3 = list.stream().peek(a -> System.out.print(a + " ")).filter(n -> n % 2 !=0).collect(Collectors.toList());
     }
 }
