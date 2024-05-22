@@ -18,8 +18,8 @@ public class main {
                 new Student("Olga", 18),
                 new Student("Sergey", 14));
 
-        Map<Integer, List<Student>> CollectPersAge = pers.stream().collect(Collectors.groupingBy(Student::getAge));
-        CollectPersAge.forEach((age, persons2) -> {
+        Map<Integer, List<Student>> collectPersAge = pers.stream().collect(Collectors.groupingBy(Student::getAge));
+        collectPersAge.forEach((age, persons2) -> {
             System.out.println("age " + age + ": Name " + persons2);
         });
         System.out.println();
