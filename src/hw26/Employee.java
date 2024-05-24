@@ -61,7 +61,7 @@ public class Employee {
                 .stream()
                 .map(Employee::getDepartment)
                 .distinct()
-                .collect(Collectors.joining(","));
+                .collect(Collectors.joining(" , "));
 
 
         System.out.println(NewDepartments);
