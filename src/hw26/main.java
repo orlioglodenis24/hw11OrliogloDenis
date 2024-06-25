@@ -4,43 +4,51 @@ package hw26;
 // чтобы избежать race condition (проверьте что изначальное значение изменилось на +4000).
 
 
-public class main {
-    int value=0;
-    public void IncreaseByOne(){
-        synchronized (this){
-            for(int i=0;i<5000;i++){
-                value++;
-                System.out.println(value);
-            }
-        }
-    }
-    public void DecreaseByOne(){
-        synchronized (this){
-            for(int i=0;i<1000;i++){
-                value--;
-                System.out.println(value);
-            }
-        }
-    }
-    public static void main(String[] args) {
-        main main=new main();
+import java.time.Duration;
+import java.time.LocalTime;
 
-        Thread increaseByOne=new Thread(()->{
+public class main {
+    int value = 0;
+
+    public void IncreaseByOne() {
+        synchronized (this) {
+            for (int i = 0; i < 5000; i++) {
+                value++;
+                System.out.println(value + " : " + Thread.currentThread().getName());
+            }
+        }
+    }
+
+    public void DecreaseByOne() {
+        synchronized (this) {
+            for (int i = 0; i < 1000; i++) {
+                value--;
+                System.out.println(value + " : " + Thread.currentThread().getName());
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        main main = new main();
+        LocalTime start = LocalTime.now();
+        System.out.println(main.value + " : " + Thread.currentThread().getName());
+        Thread increaseByOne = new Thread(() -> {
             main.IncreaseByOne();
         });
-        Thread decreaseVyOne=new Thread(()->{
+        Thread decreaseVyOne = new Thread(() -> {
             main.DecreaseByOne();
         });
         increaseByOne.start();
         decreaseVyOne.start();
 
-        try{
+        try {
             increaseByOne.join();
             decreaseVyOne.join();
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-        System.out.println(main.value);
+        LocalTime end = LocalTime.now();
+        System.out.println(main.value + " : " + Thread.currentThread().getName());
+        System.out.println("Total time: " + Duration.between(start, end));
     }
 }
