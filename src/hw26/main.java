@@ -11,20 +11,21 @@ public class main {
     int value = 0;
 
     public void IncreaseByOne() {
-        synchronized (this) {
-            for (int i = 0; i < 5000; i++) {
+        for (int i = 0; i < 5000; i++) {
+            synchronized (this) {
                 value++;
-                System.out.println(value + " : " + Thread.currentThread().getName());
             }
+            System.out.println(value + " : " + Thread.currentThread().getName());
         }
     }
 
     public void DecreaseByOne() {
-        synchronized (this) {
-            for (int i = 0; i < 1000; i++) {
+
+        for (int i = 0; i < 1000; i++) {
+            synchronized (this) {
                 value--;
-                System.out.println(value + " : " + Thread.currentThread().getName());
             }
+            System.out.println(value + " : " + Thread.currentThread().getName());
         }
     }
 
